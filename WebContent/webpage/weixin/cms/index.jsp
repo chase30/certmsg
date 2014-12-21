@@ -165,7 +165,7 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 			<div id="prev" onclick="myScroll.scrollToPage(&#39;prev&#39;, 0,400,3);return false">← prev</div>
 			<ul id="indicator">
 			<li class="">1</li><li class="">2</li><li class="">3</li><li class="active">4</li>			</ul>
-			<div id="next" onclick="myScroll.scrollToPage(&#39;next&#39;, 0);return false">next →</div>
+			<div id="next" onclick="myScroll.scrollToPage(&#39;next&#39;,0);return false">next →</div>
 		</div>
 		<div class="clr"></div>
 	</div>
