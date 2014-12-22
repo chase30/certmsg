@@ -106,7 +106,7 @@ public class TUserqueryServiceImpl extends CommonServiceImpl implements
 		    System.out.println(tqu.getQuerydate()+"-----------------------");
 		   System.out.println(new Date(curMillisecond)+"---------------------");
 			TQueryconfEntity tcon=this.findUniqueByProperty(TQueryconfEntity.class, "typecode", type);
-			List<TUserqueryEntity> tquerylist=this.findHql("from TUserqueryEntity where usercode=? and querydate=?", new Object[]{userid,new Date(curMillisecond)});
+			List<TUserqueryEntity> tquerylist=this.findHql("from TUserqueryEntity where usercode=? and querydate=? and typecode=?", new Object[]{userid,new Date(curMillisecond),type});
 			System.out.println(tquerylist.size() );
 			if(tquerylist.size()>tcon.getCountlimit()){
 				return false;
