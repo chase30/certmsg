@@ -110,7 +110,8 @@ public class TUserqueryServiceImpl extends CommonServiceImpl implements
 			
 		}
 		if(iserror==true){
-			buffer.append("查询指令输入有误");
+			buffer.append("查询指令输入有误\n");
+			buffer.append(this.getUserqueryString());
 		}
 		return buffer.toString();
 	}
