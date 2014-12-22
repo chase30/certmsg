@@ -103,8 +103,8 @@ public class TUserqueryServiceImpl extends CommonServiceImpl implements
 			}else{
 				buffer.append("不好意思！您今天查询已上限！");
 			}
-			
 		}
+		buffer.append("查询指令输入有误");
 		return buffer.toString();
 	}
 	
