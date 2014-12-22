@@ -256,4 +256,6 @@ public class WeixinAccountServiceImpl extends CommonServiceImpl implements
 		sql = sql.replace("#{UUID}", UUID.randomUUID().toString());
 		return sql;
 	}
+	
+	
 }

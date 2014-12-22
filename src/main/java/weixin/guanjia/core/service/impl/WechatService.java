@@ -118,12 +118,13 @@ public class WechatService {
 				respContent = "您发送的是音频消息！";
 			}
 			//【微信触发类型】事件推送
-			else if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_EVENT)) {
+			else if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_EVENT)){
 				LogUtil.info("------------微信客户端发送请求------------------【微信触发类型】事件推送---");
 				// 事件类型
 				String eventType = requestMap.get("Event");
 				// 订阅
 				if (eventType.equals(MessageUtil.EVENT_TYPE_SUBSCRIBE)) {
+					/*weixinUserinfoService.saveWinxinUserInfo(fromUserName , sys_accountId);*/
 					respMessage = doDingYueEventResponse(requestMap, textMessage, bundler, respMessage, toUserName, fromUserName, respContent, sys_accountId);
 				}
 				// 取消订阅

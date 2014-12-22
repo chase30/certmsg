@@ -33,7 +33,7 @@ public class ReceiveText extends IdEntity {
     //回复内容
     private String rescontent;
     //用户昵称
-    private String nickName;
+/*    private String nickName;*/
     //微信账号Id
     private String accountId;
     
@@ -96,13 +96,13 @@ public class ReceiveText extends IdEntity {
 	public void setCreateTime(Timestamp createTime) {
 		this.createTime = createTime;
 	}
-	@Column(name="nickname")
+/*	@Column(name="nickname")
 	public String getNickName() {
 		return nickName;
 	}
 	public void setNickName(String nickName) {
 		this.nickName = nickName;
-	}
+	}*/
 	@Column(name="accountid")
 	public String getAccountId() {
 		return accountId;
