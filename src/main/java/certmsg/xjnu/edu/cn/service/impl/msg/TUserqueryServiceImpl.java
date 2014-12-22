@@ -39,6 +39,7 @@ public class TUserqueryServiceImpl extends CommonServiceImpl implements
 	 * @return
 	 */
 	public String cxbd(String querycode,String openid){
+		boolean iserror=true;
 		StringBuffer buffer = new StringBuffer();
 		if(!querycode.startsWith("cx")){
 			buffer.append("查询指令输入有误");
@@ -46,6 +47,7 @@ public class TUserqueryServiceImpl extends CommonServiceImpl implements
 		}
 		String queystring=querycode.substring(4);
 		if(querycode.startsWith("cxmm")){
+			iserror=false;
 			if(this.checkuser(openid,1)){
 				String hql="from TWormsEntity where ip=?";
 				List<TWormsEntity> twormlist=this.findHql(hql, new Object[]{queystring});
@@ -66,6 +68,7 @@ public class TUserqueryServiceImpl extends CommonServiceImpl implements
 			 
 		}
 		if(querycode.startsWith("cxrc")){
+			iserror=false;
 			if(this.checkuser(openid,0)){
 			String hql="from TTrojanEntity where ip=?";
 			List<TTrojanEntity> ttolist=this.findHql(hql, new Object[]{queystring});
@@ -86,6 +89,7 @@ public class TUserqueryServiceImpl extends CommonServiceImpl implements
 			 
 		}
 		if(querycode.startsWith("cxtel")){
+			iserror=false;
 			if(this.checkuser(openid,2)){
 				String hql="from TMobileEntity where phonenumber=?";
 				List<TMobileEntity> tMobilelist=this.findHql(hql, new Object[]{queystring});
@@ -104,6 +108,10 @@ public class TUserqueryServiceImpl extends CommonServiceImpl implements
 				buffer.append("不好意思！您今天查询已上限！");
 			}
 			
+		}
+		if(iserror==true){
+			buffer.append("查询指令输入有误\n");
+			buffer.append(this.getUserqueryString());
 		}
 		return buffer.toString();
 	}
