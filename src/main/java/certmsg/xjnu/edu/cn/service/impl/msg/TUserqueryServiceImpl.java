@@ -102,8 +102,12 @@ public class TUserqueryServiceImpl extends CommonServiceImpl implements
 		    System.out.println("一天的毫秒-1:"+dayMis);
 		    //返回自 1970 年 1 月 1 日 00:00:00 GMT 以来此 Date 对象表示的毫秒数。
 		    long curMillisecond=d2.getTime();//当天的毫秒
+		    TUserqueryEntity tqu=this.getEntity(TUserqueryEntity.class,"5a4355374a704938014a70512bcd0005");
+		    System.out.println(tqu.getQuerydate()+"-----------------------");
+		   System.out.println(new Date(curMillisecond)+"---------------------");
 			TQueryconfEntity tcon=this.findUniqueByProperty(TQueryconfEntity.class, "typecode", type);
-			List<TUserqueryEntity> tquerylist=this.findHql("from TUserqueryEntity where usercode=? and querydate>?", new Object[]{userid,new Date(curMillisecond)});
+			List<TUserqueryEntity> tquerylist=this.findHql("from TUserqueryEntity where usercode=? and querydate=?", new Object[]{userid,new Date(curMillisecond)});
+			System.out.println(tquerylist.size() );
 			if(tquerylist.size()>tcon.getCountlimit()){
 				return false;
 			}
