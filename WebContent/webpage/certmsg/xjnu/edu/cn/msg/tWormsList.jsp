@@ -1,6 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <t:base type="jquery,easyui,tools,DatePicker"></t:base>
+<script type="text/javascript" charset="utf-8">
+	/*
+	 *	excel导出
+	 */
+	
+	function courseListImportXls() {
+		openuploadwin('Excel导入', 'tWormsController.do?upload', "tWormsList");
+	}
+	
+</script>
 <div class="easyui-layout" fit="true">
   <div region="center" style="padding:1px;">
   <t:datagrid name="tWormsList" title="木马信息" queryMode="group" actionUrl="tWormsController.do?datagrid" idField="id" fit="true">
@@ -18,6 +28,7 @@
    <t:dgToolBar title="录入" icon="icon-add" url="tWormsController.do?addorupdate" funname="add"></t:dgToolBar>
    <t:dgToolBar title="编辑" icon="icon-edit" url="tWormsController.do?addorupdate" funname="update"></t:dgToolBar>
    <t:dgToolBar title="查看" icon="icon-search" url="tWormsController.do?addorupdate" funname="detail"></t:dgToolBar>
+    <t:dgToolBar title="导入Excel" icon="icon-search" onclick="courseListImportXls()"></t:dgToolBar>
   </t:datagrid>
   </div>
  </div>

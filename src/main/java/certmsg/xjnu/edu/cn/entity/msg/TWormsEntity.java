@@ -13,6 +13,8 @@ import javax.persistence.Table;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.GenericGenerator;
+import org.jeecgframework.poi.excel.annotation.Excel;
+
 import javax.persistence.SequenceGenerator;
 
 /**   
@@ -32,20 +34,28 @@ public class TWormsEntity implements java.io.Serializable {
 	/**流水号*/
 	private java.lang.String id;
 	/**ip地址*/
+	@Excel(exportName="ip地址",orderNum="1",needMerge=true)
 	private java.lang.String ip;
 	/**事件类型*/
+	@Excel(exportName="事件类型",orderNum="2",needMerge=true)
 	private java.lang.String eventtype;
 	/**事件详细类型*/
+	@Excel(exportName="事件详细类型",orderNum="3",needMerge=true)
 	private java.lang.String detailtype;
 	/**发现时间*/
+	@Excel(exportName="发现时间",orderNum="4",needMerge=true)
 	private java.util.Date findtime;
 	/**处置方式*/
+	@Excel(exportName="处置方式",orderNum="5",needMerge=true)
 	private java.lang.String advice;
 	/**信息创建人*/
+	@Excel(exportName="信息创建人",orderNum="6",needMerge=true)
 	private java.lang.String creator;
 	/**信息创建时间*/
+	@Excel(exportName="信息创建时间",orderNum="7",needMerge=true)
 	private java.util.Date createtime;
 	/**备注*/
+	@Excel(exportName="备注",orderNum="8",needMerge=true)
 	private java.lang.String memo;
 	
 	/**

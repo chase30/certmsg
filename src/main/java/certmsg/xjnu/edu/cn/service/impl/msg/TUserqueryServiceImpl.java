@@ -88,11 +88,13 @@ public class TUserqueryServiceImpl extends CommonServiceImpl implements
 			}
 			 
 		}
+		String queystringtel=querycode.substring(5);
 		if(querycode.startsWith("cxtel")){
 			iserror=false;
 			if(this.checkuser(openid,2)){
 				String hql="from TMobileEntity where phonenumber=?";
-				List<TMobileEntity> tMobilelist=this.findHql(hql, new Object[]{queystring});
+				List<TMobileEntity> tMobilelist=this.findHql(hql, new Object[]{queystringtel});
+				System.out.println("-----------------"+tMobilelist.size());
 				if(tMobilelist.size()>0){
 					buffer.append("此号码已感染病毒!");
 				}else{
@@ -127,16 +129,12 @@ public class TUserqueryServiceImpl extends CommonServiceImpl implements
 		    int dayMis=1000*60*60*24;//一天的毫秒-1
 		    //返回自 1970 年 1 月 1 日 00:00:00 GMT 以来此 Date 对象表示的毫秒数。
 		    long curMillisecond=d2.getTime();//当天的毫秒
-		    TUserqueryEntity tqu=this.getEntity(TUserqueryEntity.class,"5a4355374a704938014a70512bcd0005");
 			TQueryconfEntity tcon=this.findUniqueByProperty(TQueryconfEntity.class, "typecode", type);
 			List<TUserqueryEntity> tquerylist=this.findHql("from TUserqueryEntity where usercode=? and querydate=? and typecode=?", new Object[]{userid,new Date(curMillisecond),type});
-			if(tquerylist.size()>tcon.getCountlimit()){
+			if(tquerylist.size()>=tcon.getCountlimit()){
 				return false;
 			}
-//		    long resultMis=curMillisecond+(dayMis-1); //当天最后一秒
-//		    DateFormat format2=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	    

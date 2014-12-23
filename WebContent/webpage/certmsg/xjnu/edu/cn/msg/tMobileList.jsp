@@ -1,6 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <t:base type="jquery,easyui,tools,DatePicker"></t:base>
+<script type="text/javascript" charset="utf-8">
+	/*
+	 *	excel导出
+	 */
+	
+	function courseListImportXls() {
+		openuploadwin('Excel导入', 'tMobileController.do?upload', "tMobileList");
+	}
+	
+</script>
 <div class="easyui-layout" fit="true">
   <div region="center" style="padding:1px;">
   <t:datagrid name="tMobileList" queryMode="group" title="手机病毒信息" actionUrl="tMobileController.do?datagrid" idField="id" fit="true">
@@ -19,6 +29,7 @@
    <t:dgToolBar title="录入" icon="icon-add" url="tMobileController.do?addorupdate" funname="add"></t:dgToolBar>
    <t:dgToolBar title="编辑" icon="icon-edit" url="tMobileController.do?addorupdate" funname="update"></t:dgToolBar>
    <t:dgToolBar title="查看" icon="icon-search" url="tMobileController.do?addorupdate" funname="detail"></t:dgToolBar>
+   <t:dgToolBar title="导入Excel" icon="icon-search" onclick="courseListImportXls()"></t:dgToolBar>
   </t:datagrid>
   </div>
  </div>

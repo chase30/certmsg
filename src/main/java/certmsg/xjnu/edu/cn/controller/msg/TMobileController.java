@@ -1,5 +1,7 @@
 package certmsg.xjnu.edu.cn.controller.msg;
+import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,20 +11,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
-
 import org.jeecgframework.core.common.controller.BaseController;
 import org.jeecgframework.core.common.hibernate.qbc.CriteriaQuery;
 import org.jeecgframework.core.common.model.json.AjaxJson;
 import org.jeecgframework.core.common.model.json.DataGrid;
 import org.jeecgframework.core.constant.Globals;
+import org.jeecgframework.core.util.ExceptionUtil;
 import org.jeecgframework.core.util.StringUtil;
+import org.jeecgframework.poi.excel.ExcelImportUtil;
+import org.jeecgframework.poi.excel.entity.ImportParams;
 import org.jeecgframework.tag.core.easyui.TagUtil;
-import org.jeecgframework.web.system.pojo.base.TSDepart;
 import org.jeecgframework.web.system.service.SystemService;
 import org.jeecgframework.core.util.MyBeanUtils;
-
 import certmsg.xjnu.edu.cn.entity.msg.TMobileEntity;
 import certmsg.xjnu.edu.cn.service.msg.TMobileServiceI;
 
@@ -147,5 +152,55 @@ public class TMobileController extends BaseController {
 			req.setAttribute("tMobilePage", tMobile);
 		}
 		return new ModelAndView("certmsg/xjnu/edu/cn/msg/tMobile");
+	}
+	
+	/**
+	 * 手机病毒excel导入
+	 * 
+	 * @return
+	 */
+	@RequestMapping(params = "upload")
+	public ModelAndView upload(HttpServletRequest req) {
+		return new ModelAndView("certmsg/xjnu/edu/cn/msg/tMobileUpload");
+	}
+	
+	@SuppressWarnings("unchecked")
+	@RequestMapping(params = "importExcel", method = RequestMethod.POST)
+	@ResponseBody
+	public AjaxJson importExcel(HttpServletRequest request, HttpServletResponse response) {
+		AjaxJson j = new AjaxJson();
+		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+		Map<String, MultipartFile> fileMap = multipartRequest.getFileMap();
+		for (Map.Entry<String, MultipartFile> entity : fileMap.entrySet()) {
+			MultipartFile file = entity.getValue();// 获取上传文件对象
+			ImportParams params = new ImportParams();
+			params.setTitleRows(0);
+			params.setSecondTitleRows(1);
+			params.setNeedSave(true);
+			try {
+				List<TMobileEntity> tMobileList= 
+					(List<TMobileEntity>)ExcelImportUtil.importExcelByIs(file.getInputStream(),TMobileEntity.class,params);
+				for (TMobileEntity tMobile : tMobileList) {
+					if(tMobile.getPhonenumber()!=null){
+						TMobileEntity hgper=systemService.findUniqueByProperty(TMobileEntity.class, "phonenumber", tMobile.getPhonenumber());
+						if(hgper!=null){
+							tMobileService.delete(hgper);
+						}
+						tMobileService.save(tMobile);
+					}
+				}
+				j.setMsg("文件导入成功！");
+			} catch (Exception e) {
+				j.setMsg("文件导入失败！");
+				logger.error(ExceptionUtil.getExceptionMessage(e));
+			}finally{
+				try {
+					file.getInputStream().close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return j;
 	}
 }
