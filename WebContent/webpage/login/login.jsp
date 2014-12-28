@@ -76,7 +76,7 @@ label.iPhoneCheckLabelOn span {
                 <form name="formLogin" id="formLogin" action="loginController.do?login" check="loginController.do?checkuser" method="post">
                     <input name="userKey" type="hidden" id="userKey" value="D1B5CC2FE46C4CC983C073BCA897935608D926CD32992B5900" />
                     <div class="tip">
-                        <input class="userName" name="userName" type="text" id="userName" title="用户名" iscookie="true" value="admin" nullmsg="请输入用户名!" />
+                        <input class="userName" name="userName" type="text" id="userName" title="用户名" iscookie="true" value="xjwlaq" nullmsg="请输入用户名!" />
                     </div>
                     <div class="tip">
                         <input class="password" name="password" type="password" id="password" title="密码" value="123456" nullmsg="请输入密码!" />

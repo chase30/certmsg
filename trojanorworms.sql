@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50614
 File Encoding         : 65001
 
-Date: 2014-12-22 22:27:46
+Date: 2014-12-28 20:50:10
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -462,6 +462,7 @@ CREATE TABLE `t_mobile` (
 -- ----------------------------
 -- Records of t_mobile
 -- ----------------------------
+INSERT INTO `t_mobile` VALUES ('5a43553b4a7571e2014a757920540001', '1', '盗窃病毒', '一般', '窃取信息', '2014-12-23', '切除', '小红', '2014-12-23', '');
 
 -- ----------------------------
 -- Table structure for t_notice
@@ -709,10 +710,11 @@ CREATE TABLE `t_s_base_user` (
 -- ----------------------------
 INSERT INTO `t_s_base_user` VALUES ('402881e4461f9c6401461fa2e6f50002', null, null, '4be1dd049390623054515c6d433c4e3c', 'tingfeng', null, '1', null, 'tingfeng', '4028d881436d514601436d5214d70015');
 INSERT INTO `t_s_base_user` VALUES ('402881e44648134a014648174a45000c', null, null, 'e0d5cae5376f58ac', 'jeecg测试', null, '1', null, 'ceshi', '4028d881436d514601436d5214d70015');
-INSERT INTO `t_s_base_user` VALUES ('4028d881436d514601436d5215ac0043', '1', null, 'c44b01947c9e6e3f', '管理员', null, '1', null, 'admin', '4028d881436d514601436d5214d70015');
+INSERT INTO `t_s_base_user` VALUES ('4028d881436d514601436d5215ac0043', '1', null, '5f2aa410c0a8bd5a', '管理员', null, '1', null, 'admin', '4028d881436d514601436d5214d70015');
 INSERT INTO `t_s_base_user` VALUES ('4028d881436d514601436d5215b20044', '0', null, '97c07a884bf272b5', '张代浩', null, '1', null, 'scott', '4028d881436d514601436d5214f30017');
 INSERT INTO `t_s_base_user` VALUES ('4028d881436d514601436d5215b80045', '0', null, 'f2322ec2fb9f40d1', '采购员', null, '1', null, 'cgy', '4028d881436d514601436d5214d70015');
 INSERT INTO `t_s_base_user` VALUES ('4028d881436d514601436d5215bc0046', '1', null, 'a324509dc1a3089a', '采购审批员', null, '1', null, 'cgspy', '4028d881436d514601436d5214d70015');
+INSERT INTO `t_s_base_user` VALUES ('5a43553b4a90dbfa014a90e9e2050016', null, null, '27722dc44bc4b89d', '新疆网络安全', null, '1', null, 'xjwlaq', '4028d881436d514601436d5214d70015');
 
 -- ----------------------------
 -- Table structure for t_s_config
@@ -1031,6 +1033,7 @@ INSERT INTO `t_s_function` VALUES ('5a43553b4a6c3144014a6c37a6050007', null, '1'
 INSERT INTO `t_s_function` VALUES ('5a43553b4a6c3144014a6c382ec50009', null, '1', '蠕虫信息', '4', 'tTrojanController.do?tTrojan', '5a43553b4a6c3144014a6c35b07b0001', '4028d881436d514601436d5214b30002', null);
 INSERT INTO `t_s_function` VALUES ('5a43553b4a6c3144014a6c389157000b', null, '1', '用户查询信息', '5', 'tUserqueryController.do?tUserquery', '5a43553b4a6c3144014a6c35b07b0001', '4028d881436d514601436d5214b30002', null);
 INSERT INTO `t_s_function` VALUES ('5a43553b4a6c3144014a6c3913c6000d', null, '1', '木马信息', '6', 'tWormsController.do?tWorms', '5a43553b4a6c3144014a6c35b07b0001', '4028d881436d514601436d5214b30002', null);
+INSERT INTO `t_s_function` VALUES ('5a43553b4a90dbfa014a90ee6956002c', null, '1', '欢迎关注语配置', '7', 'subscribeController.do?list', '5a43553b4a6c3144014a6c35b07b0001', '4028d881436d514601436d5214b30002', null);
 
 -- ----------------------------
 -- Table structure for t_s_icon
@@ -2283,6 +2286,51 @@ INSERT INTO `t_s_log` VALUES ('5a43553b4a7218e2014a72554b81004d', 'Chrome', '添
 INSERT INTO `t_s_log` VALUES ('5a43553b4a7218e2014a72556024004e', 'Chrome', '同步菜单信息数据成功！', '4', '218.195.213.187', '2014-12-22 22:10:05', '1', '4028d881436d514601436d5215ac0043');
 INSERT INTO `t_s_log` VALUES ('5a43553b4a7218e2014a72565ad6004f', 'Chrome', '删除12312312菜单信息数据', '4', '218.195.213.187', '2014-12-22 22:11:09', '1', '4028d881436d514601436d5215ac0043');
 INSERT INTO `t_s_log` VALUES ('5a43553b4a7218e2014a725666220050', 'Chrome', '同步菜单信息数据失败！错误码为：40016错误信息为：invalid button size', '4', '218.195.213.187', '2014-12-22 22:11:12', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a7571e2014a757245110000', 'Chrome', '用户: admin[信息部]登录成功', '1', '218.195.213.187', '2014-12-23 12:40:30', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a7571e2014a7588296e0005', 'Chrome', '用户: admin[信息部]登录成功', '1', '218.195.213.187', '2014-12-23 13:04:25', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a7571e2014a75937cf2001b', 'Chrome', '手机病毒信息更新成功', '5', '218.195.213.187', '2014-12-23 13:16:47', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a7571e2014a7593f18e001e', 'Chrome', '手机病毒信息更新成功', '5', '218.195.213.187', '2014-12-23 13:17:17', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a7571e2014a759544f40028', 'Chrome', '木马信息更新成功', '5', '218.195.213.187', '2014-12-23 13:18:44', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a7571e2014a759b4599003a', 'Chrome', '用户查询信息删除成功', '4', '218.195.213.187', '2014-12-23 13:25:17', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a7571e2014a759b5639003b', 'Chrome', '用户查询信息删除成功', '4', '218.195.213.187', '2014-12-23 13:25:22', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a7571e2014a759b61d6003c', 'Chrome', '用户查询信息删除成功', '4', '218.195.213.187', '2014-12-23 13:25:25', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a7571e2014a759ba157003d', 'Chrome', '用户查询信息删除成功', '4', '218.195.213.187', '2014-12-23 13:25:41', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a7571e2014a759bb5aa003e', 'Chrome', '用户查询信息删除成功', '4', '218.195.213.187', '2014-12-23 13:25:46', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a7571e2014a759bc205003f', 'Chrome', '用户查询信息删除成功', '4', '218.195.213.187', '2014-12-23 13:25:49', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a7571e2014a759bd39c0040', 'Chrome', '用户查询信息删除成功', '4', '218.195.213.187', '2014-12-23 13:25:54', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a7571e2014a759be0e40041', 'Chrome', '用户查询信息删除成功', '4', '218.195.213.187', '2014-12-23 13:25:57', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a7571e2014a759beaf20042', 'Chrome', '用户查询信息删除成功', '4', '218.195.213.187', '2014-12-23 13:26:00', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a7571e2014a759dc36c0047', 'Chrome', '用户查询信息删除成功', '4', '218.195.213.187', '2014-12-23 13:28:01', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a7571e2014a759dd3db0048', 'Chrome', '用户查询信息删除成功', '4', '218.195.213.187', '2014-12-23 13:28:05', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90e10a720000', 'Chrome', '用户: admin[信息部]登录成功', '1', '218.195.213.187', '2014-12-28 20:31:15', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90e4a79d0002', 'Chrome', '角色: xjwlaq被添加成功', '3', '218.195.213.187', '2014-12-28 20:35:11', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90e4f2460003', 'Chrome', '角色: 新疆网络安全被更新成功', '5', '218.195.213.187', '2014-12-28 20:35:31', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90e667cd0005', 'Chrome', '权限: 文本消息被添加成功', '3', '218.195.213.187', '2014-12-28 20:37:06', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90e70b920007', 'Chrome', '权限: 图文消息被添加成功', '3', '218.195.213.187', '2014-12-28 20:37:48', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90e7c9df0009', 'Chrome', '权限: 欢迎关注语配置被添加成功', '3', '218.195.213.187', '2014-12-28 20:38:37', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90e7ff59000a', 'Chrome', '权限: 欢迎关注语配置被删除成功', '4', '218.195.213.187', '2014-12-28 20:38:50', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90e8b8ae000c', 'Chrome', '权限: 欢迎关注语配置被添加成功', '3', '218.195.213.187', '2014-12-28 20:39:38', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90e9e2a00018', 'Chrome', '用户: xjwlaq添加成功', '3', '218.195.213.187', '2014-12-28 20:40:54', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90e9f7620019', 'Chrome', '用户admin已退出', '2', '218.195.213.187', '2014-12-28 20:41:00', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90ea2446001a', 'Chrome', '用户: xjwlaq[信息部]登录成功', '1', '218.195.213.187', '2014-12-28 20:41:11', '1', '5a43553b4a90dbfa014a90e9e2050016');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90eaaa55001b', 'Chrome', '用户xjwlaq已退出', '2', '218.195.213.187', '2014-12-28 20:41:45', '1', '5a43553b4a90dbfa014a90e9e2050016');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90eae608001c', 'Chrome', '用户: admin[信息部]登录成功', '1', '218.195.213.187', '2014-12-28 20:42:01', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90eb226a001d', 'Chrome', '权限: 文本消息被删除成功', '4', '218.195.213.187', '2014-12-28 20:42:16', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90eb40a5001e', 'Chrome', '权限: 图文消息被删除成功', '4', '218.195.213.187', '2014-12-28 20:42:24', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90eb6eb5001f', 'Chrome', '权限: 欢迎关注语配置被删除成功', '4', '218.195.213.187', '2014-12-28 20:42:36', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90ebf82d0025', 'Chrome', '用户admin已退出', '2', '218.195.213.187', '2014-12-28 20:43:11', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90ec25700026', 'Chrome', '用户: xjwlaq[信息部]登录成功', '1', '218.195.213.187', '2014-12-28 20:43:22', '1', '5a43553b4a90dbfa014a90e9e2050016');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90ec77d10027', 'Chrome', '用户xjwlaq已退出', '2', '218.195.213.187', '2014-12-28 20:43:43', '1', '5a43553b4a90dbfa014a90e9e2050016');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90ecaf990028', 'Chrome', '用户: admin[信息部]登录成功', '1', '218.195.213.187', '2014-12-28 20:43:58', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90ed6c8c002a', 'Chrome', '权限: 欢迎关注语配置被添加成功', '3', '218.195.213.187', '2014-12-28 20:44:46', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90ee0f00002b', 'Chrome', '权限: 欢迎关注语配置被删除成功', '4', '218.195.213.187', '2014-12-28 20:45:28', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90ee6978002d', 'Chrome', '权限: 欢迎关注语配置被添加成功', '3', '218.195.213.187', '2014-12-28 20:45:51', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90ef8c380032', 'Chrome', '用户admin已退出', '2', '218.195.213.187', '2014-12-28 20:47:05', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90efb2930033', 'Chrome', '用户: xjwlaq[信息部]登录成功', '1', '218.195.213.187', '2014-12-28 20:47:15', '1', '5a43553b4a90dbfa014a90e9e2050016');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90f019bc0034', 'Chrome', '用户xjwlaq已退出', '2', '218.195.213.187', '2014-12-28 20:47:42', '1', '5a43553b4a90dbfa014a90e9e2050016');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90f05c300035', 'Chrome', '用户: admin[信息部]登录成功', '1', '218.195.213.187', '2014-12-28 20:47:59', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90f0d08b0036', 'Chrome', '用户admin已退出', '2', '218.195.213.187', '2014-12-28 20:48:28', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` VALUES ('5a43553b4a90dbfa014a90f0ffb60037', 'Chrome', '用户: xjwlaq[信息部]登录成功', '1', '218.195.213.187', '2014-12-28 20:48:40', '1', '5a43553b4a90dbfa014a90e9e2050016');
 
 -- ----------------------------
 -- Table structure for t_s_operation
@@ -2344,6 +2392,7 @@ CREATE TABLE `t_s_role` (
 INSERT INTO `t_s_role` VALUES ('402881e44648134a014648163a6d0001', 'ceshi', '测试角色');
 INSERT INTO `t_s_role` VALUES ('4028d881436d514601436d52159c0041', 'admin', '管理员');
 INSERT INTO `t_s_role` VALUES ('4028d881436d514601436d5215a00042', 'manager', '普通用户');
+INSERT INTO `t_s_role` VALUES ('5a43553b4a90dbfa014a90e4a7640001', 'xjwlaq', '新疆网络安全');
 
 -- ----------------------------
 -- Table structure for t_s_role_function
@@ -2429,6 +2478,18 @@ INSERT INTO `t_s_role_function` VALUES ('5a43553b4a6c3144014a6c395ae70012', null
 INSERT INTO `t_s_role_function` VALUES ('5a43553b4a6c3144014a6c395ae70013', null, '5a43553b4a6c3144014a6c371c5e0005', '4028d881436d514601436d52159c0041');
 INSERT INTO `t_s_role_function` VALUES ('5a43553b4a6c3144014a6c395ae80014', null, '5a43553b4a6c3144014a6c3913c6000d', '4028d881436d514601436d52159c0041');
 INSERT INTO `t_s_role_function` VALUES ('5a43553b4a6c3144014a6c395ae80015', null, '5a43553b4a6c3144014a6c37a6050007', '4028d881436d514601436d52159c0041');
+INSERT INTO `t_s_role_function` VALUES ('5a43553b4a90dbfa014a90e92e7b000d', null, '5a43553b4a6c3144014a6c3913c6000d', '5a43553b4a90dbfa014a90e4a7640001');
+INSERT INTO `t_s_role_function` VALUES ('5a43553b4a90dbfa014a90e92ea50010', null, '5a43553b4a6c3144014a6c3622ba0003', '5a43553b4a90dbfa014a90e4a7640001');
+INSERT INTO `t_s_role_function` VALUES ('5a43553b4a90dbfa014a90e92ea50011', null, '5a43553b4a6c3144014a6c382ec50009', '5a43553b4a90dbfa014a90e4a7640001');
+INSERT INTO `t_s_role_function` VALUES ('5a43553b4a90dbfa014a90e92ea60013', null, '5a43553b4a6c3144014a6c389157000b', '5a43553b4a90dbfa014a90e4a7640001');
+INSERT INTO `t_s_role_function` VALUES ('5a43553b4a90dbfa014a90e92ea60014', null, '5a43553b4a6c3144014a6c35b07b0001', '5a43553b4a90dbfa014a90e4a7640001');
+INSERT INTO `t_s_role_function` VALUES ('5a43553b4a90dbfa014a90e92ea60015', null, '5a43553b4a6c3144014a6c37a6050007', '5a43553b4a90dbfa014a90e4a7640001');
+INSERT INTO `t_s_role_function` VALUES ('5a43553b4a90dbfa014a90ebe9800020', null, '402881e545f5f4780145f61198810004', '5a43553b4a90dbfa014a90e4a7640001');
+INSERT INTO `t_s_role_function` VALUES ('5a43553b4a90dbfa014a90ebe9970021', null, '402881e545f5dd1a0145f5f32cf00005', '5a43553b4a90dbfa014a90e4a7640001');
+INSERT INTO `t_s_role_function` VALUES ('5a43553b4a90dbfa014a90ebe9970023', null, '402881e545f5dd1a0145f5de9bb60001', '5a43553b4a90dbfa014a90e4a7640001');
+INSERT INTO `t_s_role_function` VALUES ('5a43553b4a90dbfa014a90eeeb0c002e', null, '4028d881436d514601436d54e0ba018f', '5a43553b4a90dbfa014a90e4a7640001');
+INSERT INTO `t_s_role_function` VALUES ('5a43553b4a90dbfa014a90eeeb0e0030', null, '4028d881436d514601436d5af95501b1', '5a43553b4a90dbfa014a90e4a7640001');
+INSERT INTO `t_s_role_function` VALUES ('5a43553b4a90dbfa014a90eeeb0e0031', null, '5a43553b4a90dbfa014a90ee6956002c', '5a43553b4a90dbfa014a90e4a7640001');
 
 -- ----------------------------
 -- Table structure for t_s_role_user
@@ -2455,6 +2516,7 @@ INSERT INTO `t_s_role_user` VALUES ('4028d881436d514601436d5217a300c0', '4028d88
 INSERT INTO `t_s_role_user` VALUES ('4028d881436d514601436d5217a700c1', '4028d881436d514601436d5215a00042', '4028d881436d514601436d5215b20044');
 INSERT INTO `t_s_role_user` VALUES ('4028d881436d514601436d5217aa00c2', '4028d881436d514601436d52159c0041', '4028d881436d514601436d5215b80045');
 INSERT INTO `t_s_role_user` VALUES ('4028d881436d514601436d5217ad00c3', '4028d881436d514601436d52159c0041', '4028d881436d514601436d5215bc0046');
+INSERT INTO `t_s_role_user` VALUES ('5a43553b4a90dbfa014a90e9e2660017', '5a43553b4a90dbfa014a90e4a7640001', '5a43553b4a90dbfa014a90e9e2050016');
 
 -- ----------------------------
 -- Table structure for t_s_territory
@@ -2903,6 +2965,7 @@ INSERT INTO `t_s_user` VALUES (null, null, null, 'images/renfang/qm/licf.gif', '
 INSERT INTO `t_s_user` VALUES ('zhangdaiscott@163.com', '13426432910', '7496661', null, '4028d881436d514601436d5215b20044', '', null);
 INSERT INTO `t_s_user` VALUES (null, null, null, null, '4028d881436d514601436d5215b80045', '', null);
 INSERT INTO `t_s_user` VALUES (null, null, null, null, '4028d881436d514601436d5215bc0046', '', null);
+INSERT INTO `t_s_user` VALUES ('', '', '', null, '5a43553b4a90dbfa014a90e9e2050016', null, null);
 
 -- ----------------------------
 -- Table structure for t_s_version
@@ -2941,6 +3004,7 @@ CREATE TABLE `t_trojan` (
 -- ----------------------------
 -- Records of t_trojan
 -- ----------------------------
+INSERT INTO `t_trojan` VALUES ('5a43553b4a7571e2014a757ee5890003', '127.0.0.1', '木马消息', '木马病毒', '2014-12-23', '切除', '小红', '2014-12-23', '');
 
 -- ----------------------------
 -- Table structure for t_userquery
@@ -2958,21 +3022,7 @@ CREATE TABLE `t_userquery` (
 -- ----------------------------
 -- Records of t_userquery
 -- ----------------------------
-INSERT INTO `t_userquery` VALUES ('5a4355374a704938014a70512bcd0005', 'oM0bRt6ioIpPDZ0Gf5XdqSBnUew0', '1', '2014-12-22', null);
-INSERT INTO `t_userquery` VALUES ('5a4355374a704938014a7052e2210008', 'oM0bRt6ioIpPDZ0Gf5XdqSBnUew0', '1', '2014-12-22', null);
-INSERT INTO `t_userquery` VALUES ('5a4355374a704938014a7054de13000a', 'oM0bRt6ioIpPDZ0Gf5XdqSBnUew0', '1', '2014-12-22', null);
-INSERT INTO `t_userquery` VALUES ('5a4355374a704938014a70550a14000c', 'oM0bRt6ioIpPDZ0Gf5XdqSBnUew0', '1', '2014-12-22', null);
-INSERT INTO `t_userquery` VALUES ('5a4355374a704938014a705924df0012', 'oM0bRt6ioIpPDZ0Gf5XdqSBnUew0', '1', '2014-12-22', null);
-INSERT INTO `t_userquery` VALUES ('5a4355374a704938014a70594e850014', 'oM0bRt6ioIpPDZ0Gf5XdqSBnUew0', '1', '2014-12-22', null);
-INSERT INTO `t_userquery` VALUES ('5a4355374a704938014a70599d420016', 'oM0bRt6ioIpPDZ0Gf5XdqSBnUew0', '1', '2014-12-22', null);
-INSERT INTO `t_userquery` VALUES ('5a4355374a704938014a705ec8fd0018', 'oM0bRt6ioIpPDZ0Gf5XdqSBnUew0', '0', '2014-12-22', null);
-INSERT INTO `t_userquery` VALUES ('5a4355374a704938014a7060a2c0001a', 'oM0bRt6ioIpPDZ0Gf5XdqSBnUew0', '1', '2014-12-22', null);
-INSERT INTO `t_userquery` VALUES ('5a4355374a704938014a706c22850022', 'oM0bRt6ioIpPDZ0Gf5XdqSBnUew0', '0', '2014-12-22', null);
-INSERT INTO `t_userquery` VALUES ('5a4355374a704938014a706cdd110024', 'oM0bRt6ioIpPDZ0Gf5XdqSBnUew0', '0', '2014-12-22', null);
-INSERT INTO `t_userquery` VALUES ('5a4355374a704938014a706ddcb80026', 'oM0bRt6ioIpPDZ0Gf5XdqSBnUew0', '0', '2014-12-22', null);
-INSERT INTO `t_userquery` VALUES ('5a4355374a712b16014a71320cc90009', 'oM0bRt6ioIpPDZ0Gf5XdqSBnUew0', '2', '2014-12-22', null);
-INSERT INTO `t_userquery` VALUES ('5a43553b4a7218e2014a72493a310023', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '2', '2014-12-22', null);
-INSERT INTO `t_userquery` VALUES ('5a43553b4a7218e2014a72495c4b0025', 'oM0bRt6ioIpPDZ0Gf5XdqSBnUew0', '2', '2014-12-22', null);
+INSERT INTO `t_userquery` VALUES ('5a43553b4a7571e2014a759e70e2004a', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '2', '2014-12-23', null);
 
 -- ----------------------------
 -- Table structure for t_worms
@@ -2994,6 +3044,7 @@ CREATE TABLE `t_worms` (
 -- ----------------------------
 -- Records of t_worms
 -- ----------------------------
+INSERT INTO `t_worms` VALUES ('5a43553b4a7571e2014a75812f8a0004', '127.0.0.11', '木马消息', '木马病毒', '2014-12-23', '切除', '小红', '2014-12-23', '');
 
 -- ----------------------------
 -- Table structure for weixin_accesstoken
@@ -3685,6 +3736,37 @@ INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7218e2014a724a3b350028', 'cx
 INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7218e2014a724a6e2f0029', 'cxrc127.0.0.1', '2014-12-22 21:58:08', 'oM0bRt6ioIpPDZ0Gf5XdqSBnUew0', '6095661712632735774', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
 INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7218e2014a724b5059002e', '03', '2014-12-22 21:59:06', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '6095661961740839012', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
 INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7218e2014a724dd0f0002f', '大转盘', '2014-12-22 22:01:50', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '6095662666115475719', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a75899d750006', 'cx', '2014-12-23 13:06:00', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '6095895663796341921', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a7589f7c10007', 'cxmm127.0.0.1', '2014-12-23 13:06:23', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '6095895775465491651', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a758a2edc0009', 'cxmm127.0.0.1', '2014-12-23 13:06:37', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '6095895835595033828', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a758a46fd000b', 'cxmm127.0.0.1', '2014-12-23 13:06:44', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '6095895861364837619', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a758a5d8e000d', 'cxmm127.0.0.1', '2014-12-23 13:06:49', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '6095895887134641414', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a758a8bd7000f', 'cxmm127.0.0.1', '2014-12-23 13:07:01', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '6095895938674248987', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a758d5b960010', 'cxrc127.0.0.1', '2014-12-23 13:10:05', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '6095896720358297132', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a758d8c6e0012', 'cxrc127.0.0.1', '2014-12-23 13:10:18', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '6095896780487839302', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a758da1e90014', 'cxrc127.0.0.1', '2014-12-23 13:10:23', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '6095896806257643087', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a758db7ed0016', 'cxrc127.0.0.1', '2014-12-23 13:10:29', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '6095896832027446870', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a758e0c6f0017', 'cxtel15887654321', '2014-12-23 13:10:51', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '6095896922221760115', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a759122830019', 'cxtel15887654321', '2014-12-23 13:14:13', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '6095897785510186913', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a7593b8a9001c', 'cxtel15887654321', '2014-12-23 13:17:03', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '6095898519949594766', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a75941f3d001f', 'cxtel1', '2014-12-23 13:17:29', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '6095898631618744513', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a7594ab970020', 'cxtel1', '2014-12-23 13:18:05', 'oM0bRt6ioIpPDZ0Gf5XdqSBnUew0', '6095898786237567230', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a7594d6af0022', 'cxtel1', '2014-12-23 13:18:16', 'oM0bRt6ioIpPDZ0Gf5XdqSBnUew0', '6095898833482207510', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a759504f00024', 'cxtel1', '2014-12-23 13:18:28', 'oM0bRt6ioIpPDZ0Gf5XdqSBnUew0', '6095898885021815075', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a75952ef30026', 'cxtel1', '2014-12-23 13:18:38', 'oM0bRt6ioIpPDZ0Gf5XdqSBnUew0', '6095898932266455354', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a7595af630029', 'cxtel1', '2014-12-23 13:19:11', 'oM0bRt6ioIpPDZ0Gf5XdqSBnUew0', '6095899065410441594', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a75961f98002b', 'cxtel', '2014-12-23 13:19:40', 'oM0bRt6ioIpPDZ0Gf5XdqSBnUew0', '6095899189964493217', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a75967b9a002c', 'cxmm117.0.0.11', '2014-12-23 13:20:03', 'oM0bRt6ioIpPDZ0Gf5XdqSBnUew0', '6095899297338675654', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a75969f12002e', 'cxmm127.0.0.11', '2014-12-23 13:20:13', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '6095899335993381342', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a75971ba00030', 'cxmm127.0.0.11', '2014-12-23 13:20:44', 'oM0bRt6ioIpPDZ0Gf5XdqSBnUew0', '6095899473432334875', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a759740bc0032', 'cxtel1', '2014-12-23 13:20:54', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '6095899507792073255', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a759757e50034', 'cxtel1', '2014-12-23 13:21:00', 'oM0bRt6ioIpPDZ0Gf5XdqSBnUew0', '6095899537856844332', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a759977910035', 'cxte1', '2014-12-23 13:23:19', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '6095900126267364120', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a7599efba0037', 'cxtel1', '2014-12-23 13:23:50', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '6095900268001284923', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a759ad00b0039', 'cxtel1', '2014-12-23 13:24:47', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '6095900517109388167', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a759c7e2a0043', 'cxtet1', '2014-12-23 13:26:37', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '6095900989555790916', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a759d7b580045', 'cxtel1', '2014-12-23 13:27:42', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '6095901260138730645', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
+INSERT INTO `weixin_receivetext` VALUES ('5a43553b4a7571e2014a759e70b20049', 'cxtel2', '2014-12-23 13:28:45', 'oM0bRt9UQ0ooPR57oEvCb9TOM6c4', '6095901535016637723', 'text', null, '0', 'gh_985d88f8eb37', 'gh_985d88f8eb37');
 
 -- ----------------------------
 -- Table structure for weixin_shop_address
