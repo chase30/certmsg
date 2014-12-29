@@ -30,7 +30,7 @@ public class queryvirusService implements KeyServiceI {
 		// TODO Auto-generated method stub
 		TUserqueryServiceI queryService =(TUserqueryServiceI)ApplicationContextUtil.getContext().getBean("tUserqueryService");
 		String respMessage = null;
-		String keyWord = content.trim();
+		String keyWord = content.trim().toLowerCase();
 		if ("".equals(keyWord) || "cx".equals(keyWord)) {
 			defaultMessage.setContent(queryService.getUserqueryString());
 			

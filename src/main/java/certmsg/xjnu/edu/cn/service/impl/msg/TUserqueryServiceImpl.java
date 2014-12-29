@@ -38,14 +38,15 @@ public class TUserqueryServiceImpl extends CommonServiceImpl implements
 	 * @param openid
 	 * @return
 	 */
-	public String cxbd(String querycode,String openid){
+	public String cxbd(String querycode1,String openid){
 		boolean iserror=true;
+		String querycode=querycode1.toLowerCase();
 		StringBuffer buffer = new StringBuffer();
 		if(!querycode.startsWith("cx")){
 			buffer.append("查询指令输入有误");
 			
 		}
-		String queystring=querycode.substring(4);
+		String queystring=querycode.substring(4).toLowerCase();
 		if(querycode.startsWith("cxmm")){
 			iserror=false;
 			if(this.checkuser(openid,1)){
@@ -88,7 +89,7 @@ public class TUserqueryServiceImpl extends CommonServiceImpl implements
 			}
 			 
 		}
-		String queystringtel=querycode.substring(5);
+		String queystringtel=querycode.substring(5).toLowerCase();
 		if(querycode.startsWith("cxtel")){
 			iserror=false;
 			if(this.checkuser(openid,2)){
