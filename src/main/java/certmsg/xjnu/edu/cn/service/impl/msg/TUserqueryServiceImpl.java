@@ -26,10 +26,10 @@ public class TUserqueryServiceImpl extends CommonServiceImpl implements
 		StringBuffer buffer = new StringBuffer();
 
 		buffer.append(
-				"请回复查询所需关键字")
+				"请回复所需关键字:")
 				.append("\n");
-		buffer.append("如： 查询ip 127.0.0.1的病毒信息则").append("\n").append("查询木马信息输入:"+""+"cxmm127.0.0.1")
-		.append("\n").append("查询蠕虫信息输入:"+""+"cxrc127.0.0.1").append("\n").append("查询电话病毒信息:"+""+"cxtel15887654321");
+		buffer.append("查询木马请回复：cxmm+ip").append("\n").append("如：cxmm127.0.0.1")
+		.append("\n").append("查询蠕虫请回复：cxrc+ip").append("\n").append("如:cxrc127.0.0.1").append("\n").append("查询手机病毒请回复：cxtel+手机号").append("\n").append("如:cxtel15887654321");
 		return buffer.toString();
 	}
 	//查询病毒所执行的方法
@@ -53,7 +53,9 @@ public class TUserqueryServiceImpl extends CommonServiceImpl implements
 				String hql="from TWormsEntity where ip=?";
 				List<TWormsEntity> twormlist=this.findHql(hql, new Object[]{queystring});
 				if(twormlist.size()>0){
-					buffer.append("此ip已感染木马病毒!");
+					String sjlx=twormlist.get(twormlist.size()).getEventtype();
+					String sjxxlx=twormlist.get(twormlist.size()).getDetailtype();
+					buffer.append("事件类型:"+sjlx).append("\n").append("事件详细类型:"+sjxxlx);
 				}else{
 					buffer.append("此ip暂无木马病毒感染!");
 				}
@@ -74,7 +76,10 @@ public class TUserqueryServiceImpl extends CommonServiceImpl implements
 			String hql="from TTrojanEntity where ip=?";
 			List<TTrojanEntity> ttolist=this.findHql(hql, new Object[]{queystring});
 			if(ttolist.size()>0){
-				buffer.append("此ip已感染蠕虫病毒!");
+				String sjlx=ttolist.get(ttolist.size()).getEventtype();
+				String sjxxlx=ttolist.get(ttolist.size()).getDetailtype();
+				buffer.append("事件类型:"+sjlx).append("\n").append("事件详细类型:"+sjxxlx);
+//				buffer.append("此ip已感染蠕虫病毒!");
 			}else{
 				buffer.append("此ip暂无蠕虫病毒感染!");
 			}
@@ -89,15 +94,19 @@ public class TUserqueryServiceImpl extends CommonServiceImpl implements
 			}
 			 
 		}
-		String queystringtel=querycode.substring(5).toLowerCase();
+		
 		if(querycode.startsWith("cxtel")){
+			String queystringtel=querycode.substring(5).toLowerCase();
 			iserror=false;
 			if(this.checkuser(openid,2)){
 				String hql="from TMobileEntity where phonenumber=?";
 				List<TMobileEntity> tMobilelist=this.findHql(hql, new Object[]{queystringtel});
 				System.out.println("-----------------"+tMobilelist.size());
 				if(tMobilelist.size()>0){
-					buffer.append("此号码已感染病毒!");
+					String bdmc=tMobilelist.get(tMobilelist.size()).getVirusname();
+					String bdwh=tMobilelist.get(tMobilelist.size()).getVirusdesc();
+					buffer.append("病毒名称:"+bdmc).append("\n").append("病毒危害:"+bdwh);
+//					buffer.append("此号码已感染病毒!");
 				}else{
 					buffer.append("此号码无病毒感染!");
 				}
@@ -130,8 +139,11 @@ public class TUserqueryServiceImpl extends CommonServiceImpl implements
 		    int dayMis=1000*60*60*24;//一天的毫秒-1
 		    //返回自 1970 年 1 月 1 日 00:00:00 GMT 以来此 Date 对象表示的毫秒数。
 		    long curMillisecond=d2.getTime();//当天的毫秒
+		  /*  long resultMis=curMillisecond+(dayMis-1); //当天最后一秒
+*/		 DateFormat format2=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			TQueryconfEntity tcon=this.findUniqueByProperty(TQueryconfEntity.class, "typecode", type);
-			List<TUserqueryEntity> tquerylist=this.findHql("from TUserqueryEntity where usercode=? and querydate=? and typecode=?", new Object[]{userid,new Date(curMillisecond),type});
+			List<TUserqueryEntity> tquerylist=this.findHql("from TUserqueryEntity where usercode=? and querydate>=? and typecode=?",
+					new Object[]{userid,new Date(curMillisecond),/*new Date(resultMis),*/type});
 			if(tquerylist.size()>=tcon.getCountlimit()){
 				return false;
 			}

@@ -7,7 +7,7 @@
    <t:dgCol title="编号" field="id" hidden="false"></t:dgCol>
    <t:dgCol title="用户微信号" field="usercode" query="true"></t:dgCol>
    <t:dgCol title="查询类型代码" field="typecode" query="true"></t:dgCol>
-   <t:dgCol title="查询日期" field="querydate" formatter="yyyy-MM-dd"></t:dgCol>
+   <t:dgCol title="查询日期" field="querydate" formatter="yyyy-MM-dd hh:mm:ss"></t:dgCol>
    <t:dgCol title="备注" field="memo" ></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <t:dgDelOpt title="删除" url="tUserqueryController.do?del&id={id}" />

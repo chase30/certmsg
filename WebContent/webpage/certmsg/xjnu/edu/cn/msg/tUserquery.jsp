@@ -42,7 +42,7 @@
 					</td>
 					<td class="value">
 						<input class="Wdate" onClick="WdatePicker()"  style="width: 150px" id="querydate" name="querydate" 
-							   value="<fmt:formatDate value='${tUserqueryPage.querydate}' type="date" pattern="yyyy-MM-dd"/>" datatype="*">
+							   value="<fmt:formatDate value='${tUserqueryPage.querydate}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>" datatype="*">
 						<span class="Validform_checktip"></span>
 					</td>
 				</tr>

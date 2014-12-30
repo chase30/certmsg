@@ -19,7 +19,7 @@
    <t:dgCol title="病毒名称" field="virusname" query="true"></t:dgCol>
    <t:dgCol title="病毒类型" field="virustype" query="true"></t:dgCol>
    <t:dgCol title="病毒危害" field="virusdesc" ></t:dgCol>
-   <t:dgCol title="发现时间" field="findtime" formatter="yyyy-MM-dd"></t:dgCol>
+   <t:dgCol title="发现时间" field="findtime" formatter="yyyy-MM-dd hh:mm:ss"></t:dgCol>
    <t:dgCol title="处置方式" field="advice" query="true"></t:dgCol>
    <t:dgCol title="信息创建人" field="creator" query="true"></t:dgCol>
    <t:dgCol title="信息创建时间" field="createtime" formatter="yyyy-MM-dd"></t:dgCol>

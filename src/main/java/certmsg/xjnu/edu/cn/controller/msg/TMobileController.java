@@ -180,12 +180,9 @@ public class TMobileController extends BaseController {
 			try {
 				List<TMobileEntity> tMobileList= 
 					(List<TMobileEntity>)ExcelImportUtil.importExcelByIs(file.getInputStream(),TMobileEntity.class,params);
+				System.out.println(tMobileList.size()+"ddd");
 				for (TMobileEntity tMobile : tMobileList) {
 					if(tMobile.getPhonenumber()!=null){
-						TMobileEntity hgper=systemService.findUniqueByProperty(TMobileEntity.class, "phonenumber", tMobile.getPhonenumber());
-						if(hgper!=null){
-							tMobileService.delete(hgper);
-						}
 						tMobileService.save(tMobile);
 					}
 				}

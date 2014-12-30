@@ -185,10 +185,6 @@ public class TWormsController extends BaseController {
 					(List<TWormsEntity>)ExcelImportUtil.importExcelByIs(file.getInputStream(),TWormsEntity.class,params);
 				for (TWormsEntity tWorms : tWormsList) {
 					if(tWorms.getIp()!=null){
-						TWormsEntity hgper=systemService.findUniqueByProperty(TWormsEntity.class, "ip", tWorms.getIp());
-						if(hgper!=null){
-							tWormsService.delete(hgper);
-						}
 						tWormsService.save(tWorms);
 					}
 				}

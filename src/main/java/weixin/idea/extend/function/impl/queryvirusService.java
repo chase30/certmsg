@@ -42,5 +42,4 @@ public class queryvirusService implements KeyServiceI {
 		return respMessage ;
 	}
 
-
 }

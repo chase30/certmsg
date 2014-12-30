@@ -1,9 +1,15 @@
+/jeecg
+/log4j.properties
+/org
 /CKfinderConfig.xml
 /dbconfig.properties
 /ehcache.xml
+<<<<<<< HEAD
 /jeecg
 /log4j.properties
 /org
 /certmsg
+=======
+>>>>>>> branch 'master' of https://github.com/chase30/certmsg.git
 /weixin
 /test
