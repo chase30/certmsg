@@ -66,7 +66,7 @@
 					</td>
 					<td class="value">
 						<input class="Wdate" onClick="WdatePicker()"  style="width: 150px" id="findtime" name="findtime" 
-							   value="<fmt:formatDate value='${tMobilePage.findtime}' type="date" pattern="yyyy-MM-dd"/>" datatype="*">
+							   value="<fmt:formatDate value='${tMobilePage.findtime}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>" datatype="*">
 						<span class="Validform_checktip"></span>
 					</td>
 				</tr>

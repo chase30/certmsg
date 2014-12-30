@@ -184,10 +184,6 @@ public class TTrojanController extends BaseController {
 					(List<TTrojanEntity>)ExcelImportUtil.importExcelByIs(file.getInputStream(),TTrojanEntity.class,params);
 				for (TTrojanEntity tTrojan : tTrojanList) {
 					if(tTrojan.getIp()!=null){
-						TTrojanEntity hgper=systemService.findUniqueByProperty(TTrojanEntity.class, "ip", tTrojan.getIp());
-						if(hgper!=null){
-							tTrojanService.delete(hgper);
-						}
 						tTrojanService.save(tTrojan);
 					}
 				}

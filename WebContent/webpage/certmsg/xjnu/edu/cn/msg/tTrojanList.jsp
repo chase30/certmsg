@@ -18,10 +18,10 @@
    <t:dgCol title="ip地址" field="ip" query="true"></t:dgCol>
    <t:dgCol title="事件类型" field="eventtype" query="true"></t:dgCol>
    <t:dgCol title="事件详细类型" field="detailtype" ></t:dgCol>
-   <t:dgCol title="发现时间" field="findtime" formatter="yyyy-MM-dd"></t:dgCol>
+   <t:dgCol title="发现时间" field="findtime" formatter="yyyy-MM-dd hh:mm:ss"></t:dgCol>
    <t:dgCol title="处置方式" field="advice" ></t:dgCol>
    <t:dgCol title="信息创建人" field="creator" query="true"></t:dgCol>
-   <t:dgCol title="信息创建时间" field="createtime" formatter="yyyy-MM-dd"></t:dgCol>
+   <t:dgCol title="信息创建时间" field="createtime" formatter="yyyy-MM-dd hh:mm:ss"></t:dgCol>
    <t:dgCol title="备注" field="memo" ></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <t:dgDelOpt title="删除" url="tTrojanController.do?del&id={id}" />

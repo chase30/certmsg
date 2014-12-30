@@ -54,7 +54,7 @@
 					</td>
 					<td class="value">
 						<input class="Wdate" onClick="WdatePicker()"  style="width: 150px" id="findtime" name="findtime" 
-							   value="<fmt:formatDate value='${tWormsPage.findtime}' type="date" pattern="yyyy-MM-dd"/>" datatype="*">
+							   value="<fmt:formatDate value='${tWormsPage.findtime}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>" datatype="*">
 						<span class="Validform_checktip"></span>
 					</td>
 				</tr>
@@ -90,7 +90,7 @@
 					</td>
 					<td class="value">
 						<input class="Wdate" onClick="WdatePicker()"  style="width: 150px" id="createtime" name="createtime" 
-							   value="<fmt:formatDate value='${tWormsPage.createtime}' type="date" pattern="yyyy-MM-dd"/>" datatype="*">
+							   value="<fmt:formatDate value='${tWormsPage.createtime}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>" datatype="*">
 						<span class="Validform_checktip"></span>
 					</td>
 				</tr>

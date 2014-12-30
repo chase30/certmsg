@@ -89,8 +89,9 @@ public class TUserqueryServiceImpl extends CommonServiceImpl implements
 			}
 			 
 		}
-		String queystringtel=querycode.substring(5).toLowerCase();
+		
 		if(querycode.startsWith("cxtel")){
+			String queystringtel=querycode.substring(5).toLowerCase();
 			iserror=false;
 			if(this.checkuser(openid,2)){
 				String hql="from TMobileEntity where phonenumber=?";
@@ -130,8 +131,11 @@ public class TUserqueryServiceImpl extends CommonServiceImpl implements
 		    int dayMis=1000*60*60*24;//一天的毫秒-1
 		    //返回自 1970 年 1 月 1 日 00:00:00 GMT 以来此 Date 对象表示的毫秒数。
 		    long curMillisecond=d2.getTime();//当天的毫秒
+		  /*  long resultMis=curMillisecond+(dayMis-1); //当天最后一秒
+*/		 DateFormat format2=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			TQueryconfEntity tcon=this.findUniqueByProperty(TQueryconfEntity.class, "typecode", type);
-			List<TUserqueryEntity> tquerylist=this.findHql("from TUserqueryEntity where usercode=? and querydate=? and typecode=?", new Object[]{userid,new Date(curMillisecond),type});
+			List<TUserqueryEntity> tquerylist=this.findHql("from TUserqueryEntity where usercode=? and querydate>=? and typecode=?",
+					new Object[]{userid,new Date(curMillisecond),/*new Date(resultMis),*/type});
 			if(tquerylist.size()>=tcon.getCountlimit()){
 				return false;
 			}
