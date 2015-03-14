@@ -24,7 +24,7 @@ public class WeixinMenuServiceImpl extends CommonServiceImpl implements WeixinMe
  	}
  	public <T> Serializable save(T entity) {
  		MenuEntity menuEntity = (MenuEntity) entity;
- 		menuEntity.setAccountId(ResourceUtil.getWeiXinAccountId());
+ 		menuEntity.setAccountId(ResourceUtil.getShangJiaAccountId());
  		Serializable t = super.save(entity);
  		//执行新增操作配置的sql增强
  		this.doAddSql((MenuEntity)entity);

@@ -72,7 +72,7 @@ public class NewsTemplateController {
 	public void datagrid(NewsTemplate newsTemplate,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
 		
 		CriteriaQuery cq = new CriteriaQuery(NewsTemplate.class, dataGrid);
-		cq.eq("accountId", ResourceUtil.getWeiXinAccountId());
+		cq.eq("accountId", ResourceUtil.getShangJiaAccountId());
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, newsTemplate);
 		
 		this.newsTemplateService.getDataGridReturn(cq, true);
@@ -169,7 +169,7 @@ public class NewsTemplateController {
 		}else{
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			newsTemplate.setAddTime(sdf.format(new Date()));
-			String accountId = ResourceUtil.getWeiXinAccountId();
+			String accountId = ResourceUtil.getShangJiaAccountId();
 			if (!"-1".equals(accountId)) {
 				this.newsTemplateService.save(newsTemplate);
 			} else {

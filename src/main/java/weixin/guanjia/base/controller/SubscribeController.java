@@ -52,7 +52,7 @@ public class SubscribeController {
 	public void datagrid(Subscribe subscribe, HttpServletRequest request,
 			HttpServletResponse response, DataGrid dataGrid) {
 		CriteriaQuery cq = new CriteriaQuery(Subscribe.class, dataGrid);
-		cq.eq("accountid", ResourceUtil.getWeiXinAccountId());
+		cq.eq("accountid", ResourceUtil.getShangJiaAccountId());
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq,
 				subscribe);
 		this.subscribeService.getDataGridReturn(cq, true);
@@ -82,10 +82,10 @@ public class SubscribeController {
 		req.setAttribute("id", id);
 		List<TextTemplate> textList = this.subscribeService
 				.findByQueryString("from TextTemplate t where t.accountId = '"
-						+ ResourceUtil.getWeiXinAccountId() + "'");
+						+ ResourceUtil.getShangJiaAccountId() + "'");
 		List<NewsTemplate> newsList = this.subscribeService
 				.findByQueryString("from NewsTemplate t where t.accountId = '"
-						+ ResourceUtil.getWeiXinAccountId() + "'");
+						+ ResourceUtil.getShangJiaAccountId() + "'");
 		req.setAttribute("textList", textList);
 		req.setAttribute("newsList", newsList);
 		if (StringUtil.isNotEmpty(id)) {
@@ -103,7 +103,7 @@ public class SubscribeController {
 	@RequestMapping(params = "su")
 	@ResponseBody
 	public AjaxJson su(Subscribe subscribe, HttpServletRequest req) {
-		String accountId = ResourceUtil.getWeiXinAccountId();
+		String accountId = ResourceUtil.getShangJiaAccountId();
 		AjaxJson j = new AjaxJson();
 		String id = subscribe.getId();
 		if (StringUtil.isNotEmpty(id)) {
@@ -146,7 +146,7 @@ public class SubscribeController {
 			}
 			org.jeecgframework.core.util.LogUtil.info(".....templateName......"+templateName);
 			subscribe.setTemplateName(templateName);
-			subscribe.setAccountid(ResourceUtil.getWeiXinAccountId());
+			subscribe.setAccountid(ResourceUtil.getShangJiaAccountId());
 			if (!"-1".equals(accountId)) {
 				this.subscribeService.save(subscribe);
 			} else {

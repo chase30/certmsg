@@ -73,7 +73,7 @@ public class MenuManagerController {
 	@RequestMapping(params = "getSubMenu")
 	public void getSubMenu(HttpServletRequest request,
 			HttpServletResponse response) {
-		String accountid = ResourceUtil.getWeiXinAccountId();
+		String accountid = ResourceUtil.getShangJiaAccountId();
 		String msgType = request.getParameter("msgType");
 		String resMsg = "";
 		 JsonConfig config = new JsonConfig();
@@ -109,7 +109,7 @@ public class MenuManagerController {
 	@RequestMapping(params = "gettemplate")
 	public void gettemplate(HttpServletRequest request,
 			HttpServletResponse response) {
-		String accountid = ResourceUtil.getWeiXinAccountId();
+		String accountid = ResourceUtil.getShangJiaAccountId();
 		String msgType = request.getParameter("msgType");
 		String resMsg = "";
 		if ("text".equals(msgType)) {
@@ -156,7 +156,7 @@ public class MenuManagerController {
 			DataGrid dataGrid) {
 
 		CriteriaQuery cq = new CriteriaQuery(MenuEntity.class);
-		cq.eq("accountId", ResourceUtil.getWeiXinAccountId());
+		cq.eq("accountId", ResourceUtil.getShangJiaAccountId());
 		if (treegrid.getId() != null) {
 			cq.eq("menuEntity.id", treegrid.getId());
 		} else {
@@ -253,7 +253,7 @@ public class MenuManagerController {
 						MenuEntity.class, fatherName);
 				menuEntity.setMenuEntity(tempMenu);
 			}
-			String accountId = ResourceUtil.getWeiXinAccountId();
+			String accountId = ResourceUtil.getShangJiaAccountId();
 			if (!"-1".equals(accountId)) {
 				this.weixinMenuService.save(menuEntity);
 			} else {
@@ -292,7 +292,7 @@ public class MenuManagerController {
 	public AjaxJson sameMenu(MenuEntity menuEntity, HttpServletRequest req) {
 		AjaxJson j = new AjaxJson();
 		String hql = "from MenuEntity where fatherid is null and accountId = '"
-				+ ResourceUtil.getWeiXinAccountId() + "'  order by  orders asc";
+				+ ResourceUtil.getShangJiaAccountId() + "'  order by  orders asc";
 		List<MenuEntity> menuList = this.systemService.findByQueryString(hql);
 		org.jeecgframework.core.util.LogUtil.info(".....一级菜单的个数是....." + menuList.size());
 		Menu menu = new Menu();
@@ -300,7 +300,7 @@ public class MenuManagerController {
 		for (int a = 0; a < menuList.size(); a++) {
 			MenuEntity entity = menuList.get(a);
 			String hqls = "from MenuEntity where fatherid = '" + entity.getId()
-					+ "' and accountId = '" + ResourceUtil.getWeiXinAccountId()
+					+ "' and accountId = '" + ResourceUtil.getShangJiaAccountId()
 					+ "'  order by  orders asc";
 			List<MenuEntity> childList = this.systemService
 					.findByQueryString(hqls);

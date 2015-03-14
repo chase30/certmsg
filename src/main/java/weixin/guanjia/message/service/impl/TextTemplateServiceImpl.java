@@ -25,7 +25,7 @@ public class TextTemplateServiceImpl extends CommonServiceImpl implements TextTe
  	}
  	@Override
  	public <T> Serializable save(T entity) {
- 		((TextTemplate)entity).setAccountId(ResourceUtil.getWeiXinAccountId());
+ 		((TextTemplate)entity).setAccountId(ResourceUtil.getShangJiaAccountId());
  		Serializable t = super.save(entity);
  		//执行新增操作配置的sql增强
  		this.doAddSql((TextTemplate)entity);

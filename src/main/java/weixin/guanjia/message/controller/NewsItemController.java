@@ -66,7 +66,7 @@ public class NewsItemController {
     	String templateId = request.getParameter("templateId");
 		CriteriaQuery cq = new CriteriaQuery(NewsItem.class, dataGrid);
 		cq.eq("newsTemplate.id", templateId);
-		cq.eq("accountId", ResourceUtil.getWeiXinAccountId());
+		cq.eq("accountId", ResourceUtil.getShangJiaAccountId());
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, newsItem);
 		this.newsItemService.getDataGridReturn(cq, true);
 		/*List<NewsItem> list =  dataGrid.getReaults();

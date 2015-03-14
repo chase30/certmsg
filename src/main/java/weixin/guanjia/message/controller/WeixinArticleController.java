@@ -115,7 +115,7 @@ public class WeixinArticleController extends BaseController {
 	@RequestMapping(params = "datagrid")
 	public void datagrid(NewsItem weixinArticle,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
 		CriteriaQuery cq = new CriteriaQuery(NewsItem.class, dataGrid);
-		cq.eq("accountId", ResourceUtil.getWeiXinAccountId());
+		cq.eq("accountId", ResourceUtil.getShangJiaAccountId());
 		//查询条件组装器
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, weixinArticle, request.getParameterMap());
 		try{
@@ -192,7 +192,7 @@ public class WeixinArticleController extends BaseController {
 			String templateId = request.getParameter("templateId");
 			NewsTemplate temp1 = this.systemService.getEntity(NewsTemplate.class, templateId);
 			weixinArticle.setNewsTemplate(temp1);
-			String accountId = ResourceUtil.getWeiXinAccountId();
+			String accountId = ResourceUtil.getShangJiaAccountId();
 			if (!"-1".equals(accountId)) {
 				newsItemService.save(weixinArticle);
 				}else{

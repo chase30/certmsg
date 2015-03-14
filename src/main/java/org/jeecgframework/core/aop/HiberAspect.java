@@ -110,7 +110,7 @@ public boolean onSave(Object entity, Serializable id, Object[] state,
 		     {
 		         /*数据权限ID*/
 		    	 if(oConvertUtils.isEmpty(state[index])){
-		    		 state[index] = ResourceUtil.getWeiXinAccountId();
+		    		 state[index] = ResourceUtil.getShangJiaAccountId();
 		    	 }
 		         continue;
 		     }

@@ -65,7 +65,7 @@ public class AutoResponseController {
 			HttpServletResponse response, DataGrid dataGrid) {
 
 		CriteriaQuery cq = new CriteriaQuery(AutoResponse.class, dataGrid);
-		cq.eq("accountId", ResourceUtil.getWeiXinAccountId());
+		cq.eq("accountId", ResourceUtil.getShangJiaAccountId());
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq,
 				autoResponse);
 		this.autoResponseService.getDataGridReturn(cq, true);
@@ -108,10 +108,10 @@ public class AutoResponseController {
 		req.setAttribute("id", id);
 		List<TextTemplate> textList = this.autoResponseService
 				.findByQueryString("from TextTemplate t where t.accountId = '"
-						+ ResourceUtil.getWeiXinAccountId() + "'");
+						+ ResourceUtil.getShangJiaAccountId() + "'");
 		List<NewsTemplate> newsList = this.autoResponseService
 				.findByQueryString("from NewsTemplate t where t.accountId = '"
-						+ ResourceUtil.getWeiXinAccountId() + "'");
+						+ ResourceUtil.getShangJiaAccountId() + "'");
 		req.setAttribute("textList", textList);
 		req.setAttribute("newsList", newsList);
 		if (StringUtil.isNotEmpty(id)) {
@@ -166,9 +166,9 @@ public class AutoResponseController {
 			String msgType = autoResponse.getMsgType();
 			templateName = getTempName(msgType, templateId);
 			autoResponse.setTemplateName(templateName);
-			String accountId = ResourceUtil.getWeiXinAccountId();
+			String accountId = ResourceUtil.getShangJiaAccountId();
 			if (!"-1".equals(accountId)) {
-				autoResponse.setAccountId(ResourceUtil.getWeiXinAccountId());
+				autoResponse.setAccountId(ResourceUtil.getShangJiaAccountId());
 				this.autoResponseService.save(autoResponse);
 			} else {
 				j.setSuccess(false);

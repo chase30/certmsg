@@ -25,7 +25,7 @@ public class NewsItemServiceImpl extends CommonServiceImpl implements NewsItemSe
  	}
  	@Override
  	public <T> Serializable save(T entity) {
- 		((NewsItem)entity).setAccountId(ResourceUtil.getWeiXinAccountId());
+ 		((NewsItem)entity).setAccountId(ResourceUtil.getShangJiaAccountId());
  		Serializable t = super.save(entity);
  		//执行新增操作配置的sql增强
  		this.doAddSql((NewsItem)entity);

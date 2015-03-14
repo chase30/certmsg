@@ -30,7 +30,7 @@ public class SubscribeServiceImpl extends CommonServiceImpl implements
 	@Override
 	public <T> Serializable save(T entity) {
 		Subscribe subscribe = (Subscribe) entity;
-		subscribe.setAccountid(ResourceUtil.getWeiXinAccountId());
+		subscribe.setAccountid(ResourceUtil.getShangJiaAccountId());
 		Serializable t = super.save(subscribe);
 		// 执行新增操作配置的sql增强
 		this.doAddSql((Subscribe) entity);

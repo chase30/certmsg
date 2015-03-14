@@ -68,7 +68,7 @@ public class TextTemplateController {
 	public void datagrid(TextTemplate textTemplate, HttpServletRequest request,
 			HttpServletResponse response, DataGrid dataGrid) {
 		CriteriaQuery cq = new CriteriaQuery(TextTemplate.class, dataGrid);
-		cq.eq("accountId", ResourceUtil.getWeiXinAccountId());
+		cq.eq("accountId", ResourceUtil.getShangJiaAccountId());
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq,
 				textTemplate);
 
@@ -146,7 +146,7 @@ public class TextTemplateController {
 			TextTemplate textTemplate = this.textTemplateService.getEntity(TextTemplate.class, id);
 			String templateName = textTemplate.getTemplateName();
 			String content = textTemplate.getContent();
-			req.setAttribute("accountId", ResourceUtil.getWeiXinAccountId());
+			req.setAttribute("accountId", ResourceUtil.getShangJiaAccountId());
 			req.setAttribute("templateName", templateName);
 			req.setAttribute("content", content);
 		}
@@ -181,7 +181,7 @@ public class TextTemplateController {
 			}
 
 		} else {
-			String accountId = ResourceUtil.getWeiXinAccountId();
+			String accountId = ResourceUtil.getShangJiaAccountId();
 			if (!"-1".equals(accountId)) {
 				SimpleDateFormat sdf = new SimpleDateFormat(
 						"yyyy-MM-dd HH:mm:ss");

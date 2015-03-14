@@ -150,7 +150,7 @@ public class WeixinExpandconfigController extends BaseController {
 		AjaxJson j = new AjaxJson();
 		message = "扩展接口管理添加成功";
 		try{
-			weixinExpandconfig.setAccountid(ResourceUtil.getWeiXinAccountId());
+			weixinExpandconfig.setAccountid(ResourceUtil.getShangJiaAccountId());
 			weixinExpandconfigService.save(weixinExpandconfig);
 			systemService.addLog(message, Globals.Log_Type_INSERT, Globals.Log_Leavel_INFO);
 		}catch(Exception e){

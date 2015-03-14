@@ -213,7 +213,7 @@ public class WeixinAccountController extends BaseController {
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);
-		WeixinAccountEntity  weixinAccountEntity = ResourceUtil.getWeiXinAccount();
+		WeixinAccountEntity  weixinAccountEntity = ResourceUtil.getShangJiaAccount();
 		request.getSession().setAttribute(WeiXinConstants.WEIXIN_ACCOUNT, weixinAccountEntity);
 		return j;
 	}
