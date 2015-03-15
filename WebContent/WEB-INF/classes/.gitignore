@@ -1,9 +1,9 @@
+/jeecg
+/log4j.properties
+/org
 /CKfinderConfig.xml
 /certmsg
 /dbconfig.properties
 /ehcache.xml
-/jeecg
-/log4j.properties
-/org
-/test
 /weixin
+/test

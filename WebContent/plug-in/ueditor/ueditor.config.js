@@ -79,7 +79,7 @@
         //,videoFieldName:"upfile"                    //附件提交的表单名，若此处修改，需要在后台对应文件修改对应参数
 
         //工具栏上的所有的功能按钮和下拉框，可以在new编辑器的实例时选择自己需要的从新定义
-        , toolbars:[["bold","italic","underline","|","insertorderedlist","insertunorderedlist","|","insertimage",'attachment',"|",'removeformat','forecolor','backcolor',"insertvideo","fullscreen"]]
+        , toolbars:[["bold","italic","underline","|","insertorderedlist","insertunorderedlist","|","insertimage",'attachment',"|",'removeformat','forecolor','backcolor',"insertvideo","source","fullscreen"]]
         /* 
         ['fullscreen', 'source', '|', 'undo', 'redo', '|',
                 'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
